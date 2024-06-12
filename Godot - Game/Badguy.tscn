@@ -1,0 +1,136 @@
+[gd_scene load_steps=20 format=3 uid="uid://bom3ii6fsrqy5"]
+
+[ext_resource type="Script" path="res://Badguy.gd" id="1_6xvsa"]
+[ext_resource type="Texture2D" uid="uid://cm0xbt6fw0rd5" path="res://Sunny-land-files/Graphical Assets/spritesheets/enemy-deadth.png" id="2_6v7kh"]
+[ext_resource type="Texture2D" uid="uid://c68n5udukx1f3" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-idle.png" id="3_iq1eq"]
+[ext_resource type="Texture2D" uid="uid://p0fvlvr4jmqo" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-jump.png" id="4_edjxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58cl1"]
+size = Vector2(27, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwy2"]
+atlas = ExtResource("2_6v7kh")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emrp6"]
+atlas = ExtResource("2_6v7kh")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v3v1"]
+atlas = ExtResource("2_6v7kh")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0vqx"]
+atlas = ExtResource("2_6v7kh")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vagqq"]
+atlas = ExtResource("2_6v7kh")
+region = Rect2(160, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbl0b"]
+atlas = ExtResource("2_6v7kh")
+region = Rect2(200, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek3kk"]
+atlas = ExtResource("3_iq1eq")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_425gb"]
+atlas = ExtResource("3_iq1eq")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dt84"]
+atlas = ExtResource("3_iq1eq")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnpa2"]
+atlas = ExtResource("3_iq1eq")
+region = Rect2(105, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vplar"]
+atlas = ExtResource("4_edjxp")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glfsl"]
+atlas = ExtResource("4_edjxp")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqiev"]
+atlas = ExtResource("4_edjxp")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xpqnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emrp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v3v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0vqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vagqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbl0b")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_425gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dt84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnpa2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vplar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glfsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqiev")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}]
+
+[node name="Frog" type="CharacterBody2D"]
+script = ExtResource("1_6xvsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_58cl1")
+
+[node name="AnimateSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xpqnp")
+animation = &"Idle"
+frame_progress = 0.303313
+
+[node name="Player Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection"]
+
+[connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]

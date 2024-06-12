@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy3i4hgwwdyix"]
+
+[ext_resource type="Script" path="res://Win.tscn.gd" id="1_7egj3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7egj3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 426.0
+offset_top = 252.0
+offset_right = 772.0
+offset_bottom = 351.0
+theme_override_font_sizes/font_size = 72
+text = "You Win!!!"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 459.0
+offset_top = 381.0
+offset_right = 733.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 72
+text = "Replay?"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 459.0
+offset_top = 509.0
+offset_right = 733.0
+offset_bottom = 628.0
+theme_override_font_sizes/font_size = 72
+text = "Quit :("
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_replay"]
