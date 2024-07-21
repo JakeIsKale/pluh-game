@@ -119,8 +119,9 @@ limit_top = 0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rv1ve")
-animation = &"Idle"
-frame_progress = 0.9342
+animation = &"Death"
+frame = 1
+frame_progress = 0.237512
 script = ExtResource("18_7hhsr")
 
 [node name="Area2D" type="Area2D" parent="."]

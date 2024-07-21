@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dhh00qjkf6upu"]
+[gd_scene load_steps=18 format=3 uid="uid://dhh00qjkf6upu"]
 
 [ext_resource type="Texture2D" uid="uid://cnbm14f4w0k4v" path="res://Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_d734u"]
 [ext_resource type="Script" path="res://BG.gd" id="1_iauvi"]
@@ -11,9 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bl4m76r2qbggn" path="res://spike .tscn" id="7_q536b"]
 [ext_resource type="PackedScene" uid="uid://20oohpj0eh8b" path="res://coin.tscn" id="9_rckjg"]
 [ext_resource type="Texture2D" uid="uid://2ovfva7tj3kn" path="res://assets/TileMap.png" id="10_eadtw"]
-[ext_resource type="PackedScene" uid="uid://bbkfjxp60tlbc" path="res://Door.tscn" id="11_2re8y"]
 [ext_resource type="PackedScene" uid="uid://bom3ii6fsrqy5" path="res://Badguy.tscn" id="13_qrt57"]
-[ext_resource type="PackedScene" uid="uid://beblgx8e0bf4o" path="res://FrUg.tscn" id="14_1l3j8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oe8pi"]
 texture = ExtResource("1_mays2")
@@ -786,29 +784,6 @@ position = Vector2(4800, 576)
 scale = Vector2(4.9974, 4.81667)
 texture = ExtResource("2_ndl54")
 
-[node name="Player" parent="." instance=ExtResource("1_q7r7x")]
-position = Vector2(297, 525)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Player"]
-script = ExtResource("5_063xf")
-
-[node name="LIVES" type="Label" parent="Player/CanvasLayer2"]
-offset_top = 29.0
-offset_right = 57.0
-offset_bottom = 52.0
-theme_override_colors/font_color = Color(0.631373, 0.933333, 0, 1)
-text = "Lives: 3
-"
-
-[node name="COINS" type="Label" parent="Player/CanvasLayer2"]
-offset_left = 2.0
-offset_right = 83.0
-offset_bottom = 49.0
-theme_override_colors/font_color = Color(0.627451, 0.937255, 0, 1)
-text = "Coins: 0
-
-"
-
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(149, 283)
 texture = ExtResource("5_ifgq7")
@@ -824,20 +799,9 @@ scale = Vector2(1.06544, 1.00026)
 position = Vector2(1874, 1107)
 scale = Vector2(-16.6613, -3.24109)
 
-[node name="Area2D3" parent="." instance=ExtResource("7_q536b")]
-position = Vector2(2332, 313)
-scale = Vector2(0.268111, 0.429951)
-
-[node name="Area2D4" parent="." instance=ExtResource("7_q536b")]
-position = Vector2(2233, 250)
-scale = Vector2(0.268111, 0.429951)
-
 [node name="TileMapCR" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_crb7q")
 format = 2
-
-[node name="Area2D5" parent="." instance=ExtResource("11_2re8y")]
-position = Vector2(2280, 305)
 
 [node name="Coin" parent="." instance=ExtResource("9_rckjg")]
 position = Vector2(406, 559)
@@ -864,15 +828,36 @@ position = Vector2(1611, 263)
 scale = Vector2(0.4, 0.4)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(1, 0.643137, 0.560784, 1)
-
-[node name="Spike" parent="." instance=ExtResource("7_q536b")]
-position = Vector2(209, 545)
+color = Color(0, 0.886275, 0.545098, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("13_qrt57")]
 position = Vector2(756, 558)
 
-[node name="Frog" parent="." instance=ExtResource("13_qrt57")]
+[node name="Player2" type="Node2D" parent="."]
 
-[node name="FrUg" parent="." instance=ExtResource("14_1l3j8")]
-position = Vector2(468, 561)
+[node name="Player" parent="Player2" instance=ExtResource("1_q7r7x")]
+position = Vector2(297, 525)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Player2/Player"]
+script = ExtResource("5_063xf")
+
+[node name="LIVES" type="Label" parent="Player2/Player/CanvasLayer2"]
+offset_top = 29.0
+offset_right = 57.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.631373, 0.933333, 0, 1)
+text = "Lives: 3
+"
+
+[node name="COINS" type="Label" parent="Player2/Player/CanvasLayer2"]
+offset_left = 2.0
+offset_right = 83.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.627451, 0.937255, 0, 1)
+text = "Coins: 0
+
+"
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Frog" parent="Mobs" instance=ExtResource("13_qrt57")]
