@@ -97,10 +97,40 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mnpa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek3kk")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -129,8 +159,8 @@ shape = SubResource("CircleShape2D_iut1q")
 
 [node name="AnimateSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xpqnp")
-animation = &"Jump"
-frame_progress = 0.260402
+animation = &"Idle"
+frame_progress = 0.659407
 
 [node name="Player Detection" type="Area2D" parent="."]
 

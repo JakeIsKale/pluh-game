@@ -4,23 +4,27 @@ var SPEED = 50
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player 
 var chase = false 
+
 func _physics_process(delta):
 	#Gravity for Frog
 	velocity.y += gravity * delta
-	if chase:
-		var direction = (player.position - self.position).normalized()
+	if chase == true:
+		$AnimateSprite2D.play("Jump")
+		var direction = 1
 		if direction.x > 0:
-			print(str(player.global_position))
-			velocity.x = direction.x * SPEED
-		else: 
-			print("Left")
-			velocity.x = direction.x * SPEED
-		move_and_slide()
+			$AnimateSprite2D.scale.x = 1
+		else:
+			$AnimateSprite2D.scale.x = -1
+		velocity.x = direction.x * SPEED
+	else:
+		$AnimateSprite2D.play("Idle")
+		velocity.x = 0 
+	move_and_slide()
 
 func _on_player_detection_body_entered(body):
 	if body.name == "Player" :
-		player = body
 		chase = true 
+
 
 
 func _on_player_detection_body_exited(body):

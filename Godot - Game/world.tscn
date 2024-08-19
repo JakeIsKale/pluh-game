@@ -829,7 +829,6 @@ position = Vector2(1611, 263)
 scale = Vector2(0.4, 0.4)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0.886275, 0.545098, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("13_qrt57")]
 position = Vector2(756, 558)
