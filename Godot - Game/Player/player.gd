@@ -60,7 +60,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _death(area):
-	if area.has_meta("Spike"):
+	if area.has_meta("Death"):
 		if Global_lives > 0:
 			position = Vector2(546, 238)
 			Global_lives -= 1 
