@@ -128,7 +128,7 @@ script = ExtResource("18_7hhsr")
 position = Vector2(-1, 5)
 shape = SubResource("CapsuleShape2D_pib38")
 
-[connection signal="area_entered" from="Area2D" to="." method="_death"]
-[connection signal="area_entered" from="Area2D" to="." method="_Door"]
 [connection signal="area_entered" from="Area2D" to="." method="_reset"]
 [connection signal="area_entered" from="Area2D" to="." method="_Coin"]
+[connection signal="area_entered" from="Area2D" to="." method="_Door"]
+[connection signal="area_entered" from="Area2D" to="." method="_death"]

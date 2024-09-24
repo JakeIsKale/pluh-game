@@ -49,7 +49,7 @@ func _physics_process(delta):
 	if not is_on_floor(): 
 		velocity.x = lerp(velocity.x, 0.0, 0.00000001)
 		
-	if is_on_floor():
+	if is_on_floor() and not direction:
 		$AnimatedSprite2D.play("Idle")
 		jump_count = 1
 	

@@ -22,10 +22,9 @@ func _physics_process(delta):
 			$AnimateSprite2D.scale.x = 1
 		velocity.x = direction * SPEED
 	else:
-		if $AnimateSprite2D("AnimatedSprite2D").animation != "Death"
-			$AnimateSprite2D.play("Idle")
-		velocity.x = 0 
-	move_and_slide()	
+		velocity.x = 0
+ 
+	move_and_slide()
 
 func _on_player_detection_body_entered(body):
 	if body.name == "Player" :
@@ -41,9 +40,8 @@ func _on_player_detection_body_exited(body):
 		player = body
 		chase = false
 
-
-func _on_player_death_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		get_node("AnimatedSprite2D").play("Death")
-		await get_node("AnimatedSPrite2D").animation_finished
+		$AnimateSprite2D.play("Death")
+		body.velocity.y = -100
 		self.queue_free()

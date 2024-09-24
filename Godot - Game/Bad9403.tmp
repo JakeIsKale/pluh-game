@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c68n5udukx1f3" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-idle.png" id="3_iq1eq"]
 [ext_resource type="Texture2D" uid="uid://p0fvlvr4jmqo" path="res://Sunny-land-files/Graphical Assets/spritesheets/frog-jump.png" id="4_edjxp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lojt8"]
-radius = 9.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_iut1q"]
+radius = 14.6373
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiwy2"]
 atlas = ExtResource("2_6v7kh")
@@ -147,35 +147,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cjkl"]
-size = Vector2(9.50006, 26.125)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a3wm"]
+size = Vector2(27, 9.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kfs8"]
 radius = 131.004
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47x88"]
-size = Vector2(25.75, 9.875)
+size = Vector2(20, 9.5)
 
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_6xvsa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -9)
-rotation = -1.56907
-shape = SubResource("CircleShape2D_lojt8")
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_iut1q")
 
 [node name="AnimateSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_xpqnp")
-animation = &"Idle"
+animation = &"Death"
 
 [node name="PlayerDeath" type="Area2D" parent="."]
-metadata/Death = true
 
-[node name="PlayerDeath" type="CollisionShape2D" parent="PlayerDeath"]
-position = Vector2(0.937497, -4.25002)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_5cjkl")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_2a3wm")
 
 [node name="Player Detection" type="Area2D" parent="."]
 visible = false
@@ -184,13 +181,12 @@ visible = false
 shape = SubResource("CircleShape2D_3kfs8")
 
 [node name="Area2D" type="Area2D" parent="."]
-metadata/Death = false
+metadata/Death = true
 
 [node name="Enemydeath" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.875, -14.0625)
+position = Vector2(1, -14.25)
 shape = SubResource("RectangleShape2D_47x88")
 
 [connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
