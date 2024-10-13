@@ -111,11 +111,6 @@ script = ExtResource("1_b2d4s")
 position = Vector2(-1, 5)
 shape = SubResource("CapsuleShape2D_pib38")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
-limit_left = 0
-limit_top = 0
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rv1ve")
@@ -127,6 +122,9 @@ script = ExtResource("18_7hhsr")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 5)
 shape = SubResource("CapsuleShape2D_pib38")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -203)
 
 [connection signal="area_entered" from="Area2D" to="." method="_reset"]
 [connection signal="area_entered" from="Area2D" to="." method="_Coin"]
