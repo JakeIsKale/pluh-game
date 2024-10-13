@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cypiv5qo57uf0"]
+[gd_scene load_steps=6 format=3 uid="uid://cypiv5qo57uf0"]
 
 [ext_resource type="Texture2D" uid="uid://cnbm14f4w0k4v" path="res://Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_mtm7v"]
 [ext_resource type="PackedScene" uid="uid://dmbqt5rxmoe15" path="res://Player/player.tscn" id="2_r7wc1"]
+[ext_resource type="PackedScene" uid="uid://b8vdt4b7aq3qf" path="res://boss.tscn" id="3_bntf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc2bc"]
 texture = ExtResource("1_mtm7v")
@@ -405,3 +406,6 @@ layer_0/tile_data = PackedInt32Array(1179603, 1245184, 18, 1245139, 1376256, 18,
 
 [node name="Player" parent="." instance=ExtResource("2_r7wc1")]
 position = Vector2(112, 12)
+
+[node name="Boss" parent="." instance=ExtResource("3_bntf5")]
+position = Vector2(718, 184)

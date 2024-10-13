@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8vdt4b7aq3qf"]
+
+[ext_resource type="Texture2D" uid="uid://n82kn5an2iep" path="res://Sunny-land-files/Graphical Assets/sprites/frog/idle/frog-idle-1.png" id="1_4dg3m"]
+
+[node name="Boss" type="Sprite2D"]
+position = Vector2(-2.28882e-05, 0)
+scale = Vector2(8.13929, 7.9375)
+texture = ExtResource("1_4dg3m")
