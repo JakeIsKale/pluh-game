@@ -124,7 +124,8 @@ position = Vector2(-1, 5)
 shape = SubResource("CapsuleShape2D_pib38")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -203)
+scale = Vector2(-4.2266, -193.081)
+zoom = Vector2(1.4, 1.4)
 
 [connection signal="area_entered" from="Area2D" to="." method="_reset"]
 [connection signal="area_entered" from="Area2D" to="." method="_Coin"]

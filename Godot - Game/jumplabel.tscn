@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cldn1vqdgjfos"]
+
+[sub_resource type="Theme" id="Theme_6vt16"]
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_6vt16")
+text = "Spacebar for jump. Tap twice for double jump!"

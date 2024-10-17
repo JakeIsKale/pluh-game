@@ -75,7 +75,8 @@ func _Coin():
 func _reset():
 	global.coin = 0
 
-
+func collect_coin():
+	print("coin collected")
 
 func _Door(area):
 	if area.has_meta("Door"):

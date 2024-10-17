@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh21aq3tw3ltl"]
+
+[sub_resource type="Theme" id="Theme_knveb"]
+Label/colors/font_color = Color(0.709804, 0.705882, 0, 1)
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_knveb")
+text = "WASD keys for movement
+"
