@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cypiv5qo57uf0"]
+[gd_scene load_steps=9 format=3 uid="uid://cypiv5qo57uf0"]
 
 [ext_resource type="Texture2D" uid="uid://cnbm14f4w0k4v" path="res://Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_mtm7v"]
 [ext_resource type="PackedScene" uid="uid://dmbqt5rxmoe15" path="res://Player/player.tscn" id="2_r7wc1"]
 [ext_resource type="PackedScene" uid="uid://cgrdyq0t21q7d" path="res://boss1.tscn" id="3_gq87o"]
+[ext_resource type="Texture2D" uid="uid://bgpbixf5ld2lt" path="res://Sunny-land-files/Graphical Assets/environment/Props/rock.png" id="4_6nte3"]
+[ext_resource type="Texture2D" uid="uid://cw24t8bosoicx" path="res://Sunny-land-files/Graphical Assets/environment/Props/rock-2.png" id="5_ob1jb"]
+[ext_resource type="Texture2D" uid="uid://doj31ifcilljb" path="res://Sunny-land-files/Graphical Assets/environment/Props/rock-1.png" id="6_vn788"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc2bc"]
 texture = ExtResource("1_mtm7v")
@@ -409,6 +412,42 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sc2bc")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(-453, 265)
+texture = ExtResource("4_6nte3")
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(205, 274)
+texture = ExtResource("4_6nte3")
+
+[node name="Rock-2" type="Sprite2D" parent="."]
+position = Vector2(85, 258)
+texture = ExtResource("5_ob1jb")
+
+[node name="Rock-1" type="Sprite2D" parent="."]
+position = Vector2(-13, 252)
+texture = ExtResource("6_vn788")
+
+[node name="Rock-3" type="Sprite2D" parent="."]
+position = Vector2(386, 251)
+texture = ExtResource("6_vn788")
+
+[node name="Rock-4" type="Sprite2D" parent="."]
+position = Vector2(-353, 258)
+texture = ExtResource("5_ob1jb")
+
+[node name="Rock3" type="Sprite2D" parent="."]
+position = Vector2(-88, 273)
+texture = ExtResource("4_6nte3")
+
+[node name="Rock-5" type="Sprite2D" parent="."]
+position = Vector2(793, 258)
+texture = ExtResource("5_ob1jb")
+
+[node name="Rock-6" type="Sprite2D" parent="."]
+position = Vector2(-538, 255)
+texture = ExtResource("6_vn788")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(37, 0)

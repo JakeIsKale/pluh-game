@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy3i4hgwwdyix"]
+[gd_scene load_steps=3 format=3 uid="uid://dy3i4hgwwdyix"]
 
 [ext_resource type="Script" path="res://Win.tscn.gd" id="1_7egj3"]
+[ext_resource type="Texture2D" uid="uid://0fkoejgffxwx" path="res://Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_s84es"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,5 +37,10 @@ offset_right = 733.0
 offset_bottom = 628.0
 theme_override_font_sizes/font_size = 72
 text = "Quit :("
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3, 2.7)
+texture = ExtResource("2_s84es")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_replay"]

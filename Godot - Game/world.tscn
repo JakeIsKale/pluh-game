@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dhh00qjkf6upu"]
+[gd_scene load_steps=26 format=3 uid="uid://dhh00qjkf6upu"]
 
 [ext_resource type="Texture2D" uid="uid://cnbm14f4w0k4v" path="res://Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_d734u"]
 [ext_resource type="Script" path="res://BG.gd" id="1_iauvi"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dl117ay3gj14i" path="res://Sunny-land-files/Graphical Assets/environment/Props/sign.png" id="20_vw24m"]
 [ext_resource type="Texture2D" uid="uid://kvfoqygi0yyy" path="res://Sunny-land-files/Graphical Assets/environment/Props/skulls.png" id="21_ic4we"]
 [ext_resource type="PackedScene" uid="uid://bc82rwnq0w52e" path="res://Portal.tscn" id="21_k0o6v"]
-[ext_resource type="PackedScene" uid="uid://20oohpj0eh8b" path="res://coin.tscn" id="22_xga4h"]
 [ext_resource type="PackedScene" uid="uid://dh21aq3tw3ltl" path="res://movementlabel.tscn" id="23_aucmi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oe8pi"]
@@ -1449,9 +1448,6 @@ position = Vector2(4150, 383)
 position = Vector2(6020, 447)
 scale = Vector2(4.19992, 3.92)
 
-[node name="Coin" parent="." instance=ExtResource("22_xga4h")]
-position = Vector2(268, 544)
-
 [node name="Label" parent="." instance=ExtResource("23_aucmi")]
 offset_left = 187.0
 offset_top = 401.0
@@ -1460,10 +1456,12 @@ offset_bottom = 424.0
 text = "WASD keys for movement"
 
 [node name="Label2" parent="." instance=ExtResource("23_aucmi")]
-offset_left = 1390.0
+offset_left = 1468.0
 offset_top = 344.0
-offset_right = 1766.0
-offset_bottom = 367.0
+offset_right = 1844.0
+offset_bottom = 393.0
+text = "Press R to restart if you get stuck!
+Tap spacebar twice for double jump!"
 
 [node name="Label3" parent="." instance=ExtResource("23_aucmi")]
 offset_left = 766.0

@@ -154,6 +154,7 @@ radius = 8.6559
 radius = 245.629
 
 [node name="Frog" type="CharacterBody2D"]
+position = Vector2(0, 147)
 scale = Vector2(14.8286, 16.6326)
 script = ExtResource("1_51yxo")
 
@@ -181,8 +182,14 @@ scale = Vector2(0.325625, 0.261691)
 metadata/death = true
 
 [node name="Playerdetection" type="CollisionShape2D" parent="Player Detection"]
-position = Vector2(0, -33.7729)
 shape = SubResource("CircleShape2D_3kfs8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -43.0
+offset_right = 67.0
+offset_bottom = -20.0
+text = "Health: 100/100"
 
 [connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]

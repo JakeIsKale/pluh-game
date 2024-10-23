@@ -82,7 +82,10 @@ func _Door(area):
 			_reset(area)
 			get_tree().change_scene_to_file("res://Win_screen.tscn")
 			print("ye")
-			
 
 func death():
 	get_tree().call_deferred("reload_current_scene")
+
+var my_array = [1, 2, 3, 4, 5]  # An array with some values
+
+  
