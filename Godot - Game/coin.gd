@@ -12,6 +12,6 @@ func _process(delta):
 
 
 func _collected(body):
-	if body.has_method("_Coin"):
-		body._Coin()
+	if body.has_method("Coin"):
+		body.Coin()
 	queue_free()

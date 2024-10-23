@@ -14,7 +14,7 @@ var total_coins = 0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_count = 1
 var max_jumps = 2
-var Global_lives = 3
+var Global_lives = 1
 
 func _ready():
 	$AnimatedSprite2D.play("Idle")
@@ -63,16 +63,15 @@ func _death(area):
 	if area.has_meta("Death"):
 		if Global_lives > 0:
 			position = Vector2(546, 238)
-			Global_lives -= 1 
 		else:
-			_reset()
+			_reset(area)
 			get_tree().reload_current_scene()
 		
 
-func _Coin():
+func _Coin(area):
 	global.coin += 1
 	
-func _reset():
+func _reset(area):
 	global.coin = 0
 
 func collect_coin():
@@ -80,6 +79,10 @@ func collect_coin():
 
 func _Door(area):
 	if area.has_meta("Door"):
-			_reset()
+			_reset(area)
 			get_tree().change_scene_to_file("res://Win_screen.tscn")
 			print("ye")
+			
+
+func death():
+	get_tree().call_deferred("reload_current_scene")

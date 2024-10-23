@@ -7,5 +7,5 @@ Label/colors/font_color = Color(0.709804, 0.705882, 0, 1)
 offset_right = 40.0
 offset_bottom = 23.0
 theme = SubResource("Theme_knveb")
-text = "WASD keys for movement
+text = "Good luck!
 "

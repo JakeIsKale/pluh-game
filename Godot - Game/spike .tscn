@@ -1,18 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl4m76r2qbggn"]
+[gd_scene load_steps=3 format=3 uid="uid://bl4m76r2qbggn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcip1"]
-size = Vector2(40, 40)
+[ext_resource type="Texture2D" uid="uid://fehseqgei70g" path="res://Sunny-land-files/Graphical Assets/environment/Props/spikes-top.png" id="1_ofs46"]
 
-[node name="Spike" type="Area2D"]
-metadata/spike = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qme4m"]
+size = Vector2(16, 10)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -19.0
-offset_right = 20.0
-offset_bottom = 21.0
+[node name="Spikes-top" type="Sprite2D"]
+texture = ExtResource("1_ofs46")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_fcip1")
-debug_color = Color(0.862745, 0.360784, 0, 0.419608)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qme4m")

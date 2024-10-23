@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cldn1vqdgjfos"]
+[gd_scene load_steps=3 format=3 uid="uid://cldn1vqdgjfos"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tm0qo"]
 
 [sub_resource type="Theme" id="Theme_6vt16"]
+Label/styles/normal = SubResource("StyleBoxTexture_tm0qo")
 
 [node name="Label" type="Label"]
 offset_right = 40.0

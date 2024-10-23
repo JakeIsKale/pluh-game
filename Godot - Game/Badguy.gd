@@ -34,7 +34,7 @@ func _on_player_detection_body_entered(body):
 
 
 func _on_player_detection_body_exited(body):
-	if body.name == "Player" :
+	if body.name == "Player":
 		$AnimateSprite2D.play("Idle")
 		velocity.x = 0
 		player = body
@@ -42,7 +42,13 @@ func _on_player_detection_body_exited(body):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
+		chase = false
 		$AnimateSprite2D.play("Death")
 		body.velocity.y = -100
 		self.queue_free()
+
+
+func _on_flung_body_entered(body):
+	if body.name == "player":
+		body.velocity.y = -1000
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bom3ii6fsrqy5"]
+[gd_scene load_steps=24 format=3 uid="uid://bom3ii6fsrqy5"]
 
 [ext_resource type="Script" path="res://Badguy.gd" id="1_6xvsa"]
 [ext_resource type="Texture2D" uid="uid://cm0xbt6fw0rd5" path="res://Sunny-land-files/Graphical Assets/spritesheets/enemy-deadth.png" id="2_6v7kh"]
@@ -150,11 +150,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cjkl"]
 size = Vector2(9.50006, 26.125)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3kfs8"]
-radius = 131.004
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjqye"]
+size = Vector2(255, 41.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47x88"]
-size = Vector2(25.75, 9.875)
+size = Vector2(27.75, 16.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64yfw"]
+size = Vector2(28, 20)
 
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_6xvsa")
@@ -178,19 +181,25 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_5cjkl")
 
 [node name="Player Detection" type="Area2D" parent="."]
-visible = false
 
 [node name="Playerdetection" type="CollisionShape2D" parent="Player Detection"]
-shape = SubResource("CircleShape2D_3kfs8")
+shape = SubResource("RectangleShape2D_bjqye")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="frogdeath" type="Area2D" parent="."]
 metadata/Death = false
 
-[node name="Enemydeath" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.875, -14.0625)
+[node name="frogdeath" type="CollisionShape2D" parent="frogdeath"]
+position = Vector2(0.875, -17.5625)
 shape = SubResource("RectangleShape2D_47x88")
+
+[node name="flung" type="Area2D" parent="."]
+
+[node name="flung" type="CollisionShape2D" parent="flung"]
+position = Vector2(1, -19)
+shape = SubResource("RectangleShape2D_64yfw")
 
 [connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
 [connection signal="body_entered" from="Player Detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="Player Detection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="frogdeath" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="flung" to="." method="_on_flung_body_entered"]

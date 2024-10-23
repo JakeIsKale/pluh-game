@@ -1457,3 +1457,25 @@ offset_left = 187.0
 offset_top = 401.0
 offset_right = 387.0
 offset_bottom = 424.0
+text = "WASD keys for movement"
+
+[node name="Label2" parent="." instance=ExtResource("23_aucmi")]
+offset_left = 1390.0
+offset_top = 344.0
+offset_right = 1766.0
+offset_bottom = 367.0
+
+[node name="Label3" parent="." instance=ExtResource("23_aucmi")]
+offset_left = 766.0
+offset_top = 406.0
+offset_right = 1101.0
+offset_bottom = 429.0
+text = "Watch out for frogs, if they hit you. You die
+
+"
+
+[node name="Label4" parent="." instance=ExtResource("23_aucmi")]
+offset_left = 2071.0
+offset_top = 283.0
+offset_right = 2153.0
+offset_bottom = 306.0

@@ -128,6 +128,6 @@ scale = Vector2(-4.2266, -193.081)
 zoom = Vector2(1.4, 1.4)
 
 [connection signal="area_entered" from="Area2D" to="." method="_reset"]
-[connection signal="area_entered" from="Area2D" to="." method="_Coin"]
 [connection signal="area_entered" from="Area2D" to="." method="_death"]
+[connection signal="area_entered" from="Area2D" to="." method="_Coin"]
 [connection signal="area_entered" from="Area2D" to="." method="_Door"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://r4utcutb7tru"]
+
+[ext_resource type="Texture2D" uid="uid://fehseqgei70g" path="res://Sunny-land-files/Graphical Assets/environment/Props/spikes-top.png" id="1_qrtl5"]
+
+[node name="Spikes-top" type="Sprite2D"]
+scale = Vector2(15.16, 16.96)
+texture = ExtResource("1_qrtl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
