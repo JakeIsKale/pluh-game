@@ -151,7 +151,7 @@ animations = [{
 radius = 8.6559
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kfs8"]
-radius = 245.629
+radius = 634.37
 
 [node name="Frog" type="CharacterBody2D"]
 position = Vector2(0, 147)
@@ -182,6 +182,7 @@ scale = Vector2(0.325625, 0.261691)
 metadata/death = true
 
 [node name="Playerdetection" type="CollisionShape2D" parent="Player Detection"]
+position = Vector2(0, -33.5432)
 shape = SubResource("CircleShape2D_3kfs8")
 
 [node name="Label" type="Label" parent="."]

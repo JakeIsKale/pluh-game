@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 300
+var SPEED = 400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player 
 var chase = false 
@@ -52,3 +52,5 @@ func _on_player_death_body_entered(body):
 	if body.name == "Player":
 		print(body)
 		body.death()
+
+
